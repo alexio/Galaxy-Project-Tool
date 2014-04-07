@@ -1,0 +1,40 @@
+<tool id="faster2_filters" name="Filters">
+	<description>Choose and apply filters</description>
+	<command interpreter="python">
+		faster2_filters.py
+	</command>
+	<inputs>
+		<repeat name="filter_list" title="Choose Filters">
+			<conditional name="conditional_options">
+			<param name="filter" type="select" label="Filter">
+				<option value="filter">filter</option>
+				<option value="names">names</option>
+				<option value="print">print</option>
+				<option value="report">report</option>
+				<option value="sample">sample</option>
+				<option value="select">select</option>
+			</param>
+			<when value="filter">
+				<conditional name="conditional_filter">
+					<param type="select" name="filter_choice" label="Type">
+						<option value="N">N (filter by content)</option>
+						<option value="size">Filter by size</option>
+					</param>
+					<when value="size">
+						<param name="filter_size" label="Size:" type="data_column" data_ref="filter_choice"/>
+					</when>
+				</conditional>
+			</when>
+		</conditional>
+		</repeat>
+	</inputs>
+	<outputs>
+		<!--output filterd file-->
+	</outputs>
+	<tests>
+		<test>
+		</test>
+	</tests>
+	<help>
+	</help>
+</tool>

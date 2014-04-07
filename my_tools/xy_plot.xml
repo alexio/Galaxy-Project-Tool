@@ -1,0 +1,38 @@
+<tool id="faster2" name="faster2">
+	<inputs>
+		<param name="main" type="text" value="" size="30" label="Plot Title"/>
+		<param name="xlab" type="text" value="" size="30" label="Label for x axis"/>
+		<param name="ylab" type="text" value="" size="30" label="Label for the y axis"/>
+		<repeat name="series" title="Series">
+			<param name="input" type="data" format="tabular" label="Dataset"/>
+			<param name="xcol" type="data_column" data_ref="input" label="Column for x axis"/>
+			<param name="ycol" type="data_column" data_ref="input" label="Column for y axis"/>
+			<conditional name="series_type">
+				<param name="type" type="select" label="Series Type">
+					<option value="line" selected="true">Line</option>
+					<option value="points" selected="true">Points</option>
+				<param>
+				<when value="line">
+					<param name="lty" type="select" label="line type">
+						<option value="1">Solid</option>
+						<option value="2">Dashed</option>
+						<option value="3">Dotted</option>
+					</param>
+					<param name="col" type="select" label="Line Color">
+						<option value="1">Red</option>
+						<option value="2">Blue</option>
+						<option value="3">Green</option>
+					</param>
+					<param name="lwd" type="float" label="line width" value="1.0"/>
+				</when>
+				<when value="points">
+					<param name="col" type="select" label="Point Color">
+                                                <option value="1">Red</option>
+                                                <option value="2">Blue</option>
+                                                <option value="3">Green</option>
+                                        </param>				
+				</when>
+			</conditional>
+		</repeat>
+	</inputs>
+</tool>

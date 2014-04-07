@@ -1,0 +1,27 @@
+<tool id="faster2_index" name="Initialize">
+	<description>Create Index</description>
+	<command interpreter="python">
+		faster2_index.py 
+		#for $file in $file_list
+			'${file.input1}'
+		 #end for
+	</command>
+	<inputs>
+    	<repeat name="file_list" title="Fasta or FastaQ files (not both)">
+			<param name="input1" type="data" label="File for indexing"/>
+		</repeat>
+ 	</inputs>
+  	<outputs>
+		<!-- <data format="tabular" name="output" />-->
+	</outputs>
+
+	<tests>
+		<test>
+			<param name="input" value="fa_gc_content_input.fa"/>
+			<output name="out_file1" file="fa_gc_content_output.txt"/>
+		</test>
+	</tests>
+
+	<help>
+	</help>
+</tool>

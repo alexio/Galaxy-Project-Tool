@@ -1,0 +1,23 @@
+<tool id="fa_gc_content_1" name="Run Initial Setup">
+  <description></description>
+  <command interpreter="bash">basht1.sh</command>
+  <inputs>
+    <!--<param name="input" type="file" label="Sample file for indexing"/>
+-->
+  </inputs>
+  <outputs>
+   <!-- <data format="tabular" name="output" />
+ -->
+  </outputs>
+
+  <tests>
+    <test>
+      <param name="input" value="fa_gc_content_input.fa"/>
+      <output name="out_file1" file="fa_gc_content_output.txt"/>
+    </test>
+  </tests>
+
+  <help>
+  </help>
+
+</tool>
