@@ -1,0 +1,45 @@
+*** Faster2 ***
+
+Version: faster2 0.29 2014-03-17
+Copyright: (c) 2012-2014 by Jaroslaw Zola <jaroslaw.zola@gmail.com>
+License: Distributed under the MIT License
+
+Quick install
+
+1. Download the faster2 archive from
+   http://www.ece.iastate.edu/~zola/faster2/
+
+   For instance you can use wget:
+   wget http://www.ece.iastate.edu/~zola/faster2/faster2-current.tar.bz2
+
+2. Unpack the archive:
+   tar xfj faster2-current.tar.bz2
+
+3. Enter the faster2 directory and compile:
+   cd faster2
+   make
+
+4. Copy the final faster2 executable to your preferred location.
+
+5. You are done!
+
+Custom compilation
+
+The default Makefile provided with faster2 uses g++ compiler and
+assumes that the Boost library has been installed in the standard location.
+If this is not the case, the Makefile can be easily customized to
+use different compiler and/or use any non-standard Boost installation.
+
+To use different compiler edit the CXX and CXXFLAGS variable.
+For instance to use Clang set:
+
+CXX=clang++
+
+To use any non-standard Boost installation uncomment and customize
+BOOST_INCLUDE and BOOST_LIB variables. The first one should be set
+to where Boost headers are installed. The second one should point to
+the directory with Boost libraries. For instance, if Boost has been
+installed in /usr/local/boost then set:
+
+BOOST_INCLUDE=-I/usr/local/boost/include
+BOOST_LIB=-L/usr/local/boost/lib
